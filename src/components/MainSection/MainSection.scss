@@ -1,0 +1,174 @@
+// @import "./styles.scss";
+
+$white: #fff;
+$black: #000;
+$background: #1a1918;
+$secondary: #80124d;
+$offwhite: #f6f6f6;
+
+main {
+  height: 85vh;
+  display: flex;
+  // background-image: url('../images/background.jpg');
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // opacity: 0.5;
+  background: rgba(0, 0, 0, 0.5);
+  // background: $background;
+  position: relative;
+}
+
+main::after {
+  // height: 95.2%;
+  content: "";
+  //   background-image: url("../images/background.jpg");
+  background-size: cover;
+  // opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  margin-top: 10rem;
+  width: 62%;
+
+  &__description {
+    font-size: 3rem;
+    color: white;
+    margin-top: 1rem;
+  }
+
+  &__button {
+    width: 20%;
+  }
+
+  &__buttons {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--contact {
+      border: 2px solid $secondary;
+      margin-right: 2rem;
+      font-size: 24px;
+      padding: 0.8rem 2.7rem;
+      border-radius: 24px;
+      color: $white;
+      background: $secondary;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    &--contact:hover {
+      background: $white;
+      color: $background;
+      border: 2px solid $white;
+    }
+
+    &--projects {
+      background: none;
+      font-size: 24px;
+      padding: 0.8rem 2.7rem;
+      border: 2px solid $secondary;
+      border-radius: 24px;
+      color: $white;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    &--projects:hover {
+      background: $white;
+      color: $background;
+      border: 2px solid $white;
+    }
+  }
+}
+
+.main-container {
+  width: 80%;
+  justify-content: space-around;
+  margin: 0 auto;
+  display: flex;
+}
+
+.img {
+  // width: 300px;
+  width: 400px;
+  height: 400px;
+  margin-top: 6rem;
+  padding-left: 5rem;
+  // object-fit: contain;
+  filter: invert(100%) sepia(8%) saturate(31%) hue-rotate(297deg)
+    brightness(109%) contrast(107%);
+}
+
+b {
+  font-size: 3rem;
+  color: $white;
+}
+
+.animationContainer {
+  // width: 300px;
+  width: 400px;
+  height: 400px;
+  margin-top: 5rem;
+  padding-left: 3rem;
+  z-index: 10;
+  // object-fit: contain;
+  //   filter: invert(100%) sepia(8%) saturate(31%) hue-rotate(297deg) brightness(109%) contrast(107%);
+}
+
+@media (max-width: 1100px) {
+  .main-section {
+    width: 90%;
+  }
+}
+
+@media (max-width: 800px) {
+  .main-section {
+    margin-top: 7rem;
+    width: 90%;
+
+    &__description {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  b {
+    font-size: 2.5rem;
+  }
+
+  .main-section {
+    margin-top: 4rem;
+
+    &__description {
+      font-size: 1.8rem;
+    }
+
+    &__buttons {
+      &--contact {
+        border: 2px solid $secondary;
+        margin-right: 2rem;
+        font-size: 18px;
+        padding: 0.8rem 2rem;
+      }
+
+      &--projects {
+        background: none;
+        font-size: 18px;
+        padding: 0.8rem 2rem;
+        border: 2px solid $secondary;
+      }
+    }
+  }
+}

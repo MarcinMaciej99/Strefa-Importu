@@ -1,0 +1,38 @@
+@import "../../App.scss";
+
+header {
+  width: 100%;
+}
+
+.header {
+  width: 80%;
+  margin: 1rem auto;
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: 100px;
+  }
+
+  &__clickable-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--calculator {
+      background: $base-color;
+      font-size: 1.4rem;
+      color: $white;
+      padding: 1rem;
+      border-radius: 20px;
+    }
+
+    &--link {
+      margin-left: 2rem;
+      font-size: 1.4rem;
+    }
+  }
+}
