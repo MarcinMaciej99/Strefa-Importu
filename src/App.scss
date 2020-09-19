@@ -1,8 +1,10 @@
 $white: #fff;
 $base-color: #365075;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400;500&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Noto Sans HK", sans-serif;
 }
