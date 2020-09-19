@@ -1,0 +1,35 @@
+@import "../../App.scss";
+
+* {
+  font-family: "Noto Sans HK", sans-serif;
+}
+
+.MuiTypography-root {
+  flex-basis: 100% !important;
+}
+
+.root {
+  width: 80%;
+}
+
+.icon {
+  color: #fff;
+}
+
+.accordainHeader {
+  background: #365075 !important;
+  color: #fff !important;
+  font-family: Comic Sans MS;
+  width: 100%;
+}
+
+.heading {
+  font-size: 1.8rem !important;
+  width: 100% !important;
+}
+
+.secondaryHeading {
+  width: 100%;
+  font-size: 1.4rem !important;
+  color: #fff;
+}
