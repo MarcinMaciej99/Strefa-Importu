@@ -5,14 +5,15 @@ import React, { useState } from "react";
 import "./Header.scss";
 // import hamburger from "../images/bars-solid.svg"
 import logo from "../../images/logo.png";
+import logo2 from "../../images/logo2.png";
 
-export const Header = () => {
+const Header = () => {
   const [open, setOpen] = useState(false);
   return (
     <header>
       <div className="header">
         <div className="header__links">
-          <img src={logo} alt="" className="header__logo" />
+          <img src={logo2} alt="" className="header__logo" />
           <div className="header__clickable-links">
             <div className="header__clickable-links--calculator">
               Kalkulator
@@ -26,3 +27,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;

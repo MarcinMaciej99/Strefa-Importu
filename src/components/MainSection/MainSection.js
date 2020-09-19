@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import "./MainSection.scss";
 // import lottie from "lottie-web";
 
-export const MainSection = () => {
+const MainSection = () => {
   let animationContainer = React.createRef();
 
   // useEffect(() => {
@@ -43,4 +43,4 @@ export const MainSection = () => {
   );
 };
 
-// export default MainSection;
+export default MainSection;

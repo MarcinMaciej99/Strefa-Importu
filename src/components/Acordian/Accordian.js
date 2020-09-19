@@ -5,15 +5,24 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+// import "./Accordian.scss";
 
 const useStyles = makeStyles((theme) => ({
+  test: {
+    background: "#365075",
+    color: "#fff",
+  },
+
+  test2: {
+    background: "rgba(100, 27, 227, 0.5);",
+  },
+
   root: {
     width: "100%",
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
     flexBasis: "33.33%",
-    background: "",
     flexShrink: 0,
   },
   secondaryHeading: {
@@ -37,16 +46,14 @@ export default function Accordian() {
         onChange={handleChange("panel1")}
       >
         <AccordionSummary
+          className={classes.test}
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
           <Typography className={classes.heading}>General settings</Typography>
-          <Typography className={classes.secondaryHeading}>
-            I am an accordion
-          </Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails className={classes.test}>
           <Typography>
             Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
             Aliquam eget maximus est, id dignissim quam.
@@ -58,16 +65,14 @@ export default function Accordian() {
         onChange={handleChange("panel2")}
       >
         <AccordionSummary
+          className={classes.test}
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2bh-content"
           id="panel2bh-header"
         >
           <Typography className={classes.heading}>Users</Typography>
-          <Typography className={classes.secondaryHeading}>
-            You are currently not an owner
-          </Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails className={classes.test}>
           <Typography>
             Donec placerat, lectus sed mattis semper, neque lectus feugiat
             lectus, varius pulvinar diam eros in elit. Pellentesque convallis
@@ -80,16 +85,14 @@ export default function Accordian() {
         onChange={handleChange("panel3")}
       >
         <AccordionSummary
+          className={classes.test}
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel3bh-content"
           id="panel3bh-header"
         >
           <Typography className={classes.heading}>Advanced settings</Typography>
-          <Typography className={classes.secondaryHeading}>
-            Filtering has been entirely disabled for whole web server
-          </Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails className={classes.test}>
           <Typography>
             Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
             sit amet egestas eros, vitae egestas augue. Duis vel est augue.
@@ -101,13 +104,14 @@ export default function Accordian() {
         onChange={handleChange("panel4")}
       >
         <AccordionSummary
+          className={classes.test}
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel4bh-content"
           id="panel4bh-header"
         >
           <Typography className={classes.heading}>Personal data</Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails className={classes.test}>
           <Typography>
             Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
             sit amet egestas eros, vitae egestas augue. Duis vel est augue.
