@@ -5,34 +5,9 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-// import "./Accordian.scss";
-
-const useStyles = makeStyles((theme) => ({
-  test: {
-    background: "#365075",
-    color: "#fff",
-  },
-
-  test2: {
-    background: "rgba(100, 27, 227, 0.5);",
-  },
-
-  root: {
-    width: "100%",
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    flexBasis: "33.33%",
-    flexShrink: 0,
-  },
-  secondaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary,
-  },
-}));
+import "./Accordian.scss";
 
 export default function Accordian() {
-  const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
@@ -40,23 +15,29 @@ export default function Accordian() {
   };
 
   return (
-    <div className={classes.root}>
+    <div className="root">
       <Accordion
         expanded={expanded === "panel1"}
         onChange={handleChange("panel1")}
       >
         <AccordionSummary
-          className={classes.test}
-          expandIcon={<ExpandMoreIcon />}
+          className="accordainHeader"
+          expandIcon={<ExpandMoreIcon className="icon" />}
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
-          <Typography className={classes.heading}>General settings</Typography>
+          <Typography className="heading">Krok 1: Wybór pojazdu</Typography>
         </AccordionSummary>
-        <AccordionDetails className={classes.test}>
-          <Typography>
-            Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
-            Aliquam eget maximus est, id dignissim quam.
+        <AccordionDetails className="accordainHeader">
+          <Typography className="secondaryHeading">
+            Pierwszym krokiem jest dokonanie przez Państwa wyboru pojazdu,
+            korzystając z wyszukiwarek pojazdów na portalach aukcyjnych
+            (copart.com oraz iaai.com) W przypadku niejasności lub jakichkolwiek
+            problemów, jesteśmy do Państwa dyspozycji i pomożemy w wyborze
+            odpowiedniego samochodu wedle podanych przez Klienta kryteriów.
+            Dodatkowo otrzymają Państwo od nas informację, zawierającą opinię.
+            Korzystamy z pomocy płatnych raportów takich jak CARFAX, AUTOCHECK,
+            EPICVIN, INSTAVIN.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -65,18 +46,25 @@ export default function Accordian() {
         onChange={handleChange("panel2")}
       >
         <AccordionSummary
-          className={classes.test}
-          expandIcon={<ExpandMoreIcon />}
+          className="accordainHeader"
+          expandIcon={<ExpandMoreIcon className="icon" />}
           aria-controls="panel2bh-content"
           id="panel2bh-header"
         >
-          <Typography className={classes.heading}>Users</Typography>
+          <Typography className="heading">Krok 2: Umowa</Typography>
         </AccordionSummary>
-        <AccordionDetails className={classes.test}>
-          <Typography>
-            Donec placerat, lectus sed mattis semper, neque lectus feugiat
-            lectus, varius pulvinar diam eros in elit. Pellentesque convallis
-            laoreet laoreet.
+        <AccordionDetails className="accordainHeader">
+          <Typography className="secondaryHeading">
+            Po dokonaniu wyboru pojazdu, zostajecie Państwo poinformowani o
+            prognozowanych cenach oraz szacowanych kosztach transakcji
+            (związanych z zakupem i importem auta z USA do Polski). Większość
+            pojazdów na rynku amerykańskim jest sprzedawana w formie licytacji,
+            dlatego do Państwa należy decyzja do jakiej kwoty będziemy licytować
+            dane auto lub inny pojazd. Będąc do Państwa dyspozycji pomożemy
+            określić kwotę licytacji aby była atrakcyjna. Dalszym etapem jest
+            podpisanie umowy pomiędzy stronami oraz wpłacenie kaucji na
+            licytację danego auta w wysokości 10% ustalonej kwoty licytacji
+            (wartość nie może być niższa niż 3000 PLN).
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -85,17 +73,26 @@ export default function Accordian() {
         onChange={handleChange("panel3")}
       >
         <AccordionSummary
-          className={classes.test}
-          expandIcon={<ExpandMoreIcon />}
+          className="accordainHeader"
+          expandIcon={<ExpandMoreIcon className="icon" />}
           aria-controls="panel3bh-content"
           id="panel3bh-header"
         >
-          <Typography className={classes.heading}>Advanced settings</Typography>
+          <Typography className="heading">Krok 3: Zaliczka</Typography>
         </AccordionSummary>
-        <AccordionDetails className={classes.test}>
-          <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-            sit amet egestas eros, vitae egestas augue. Duis vel est augue.
+        <AccordionDetails className="accordainHeader">
+          <Typography className="secondaryHeading">
+            Kaucja jest formą zabezpieczenia dla licytującego w przypadku
+            wycofania się przez Klienta z zakupu wybranego pojazdu oraz
+            pokryciem obciążenia narzuconego przez serwis aukcyjny w przypadku
+            rezygnacji licytującego. Depozyt zostaje zwrócony w ciągu 2 dni
+            roboczych na konto Klienta w momencie, gdy licytowany samochód
+            przekroczy wartość zakładanego przez Państwa budżetu. Na życzenie
+            Klienta może zostać zostawiony na poczet kolejnej licytacji. Po
+            otrzymaniu informacji o wygranej aukcji, Klient jest zobowiązany
+            dokonać pełnej opłaty bezpośrednio na konto firmowe w Stanach
+            Zjednoczonych w ciągu 2 dni roboczych. Jest to warunek konieczny,
+            aby uniknąć dodatkowo naliczonych opłat.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -104,17 +101,45 @@ export default function Accordian() {
         onChange={handleChange("panel4")}
       >
         <AccordionSummary
-          className={classes.test}
-          expandIcon={<ExpandMoreIcon />}
+          className="accordainHeader"
+          expandIcon={<ExpandMoreIcon className="icon" />}
           aria-controls="panel4bh-content"
           id="panel4bh-header"
         >
-          <Typography className={classes.heading}>Personal data</Typography>
+          <Typography className="heading">
+            Krok 4: Importowanie samochodu z USA do Polski
+          </Typography>
         </AccordionSummary>
-        <AccordionDetails className={classes.test}>
-          <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-            sit amet egestas eros, vitae egestas augue. Duis vel est augue.
+        <AccordionDetails className="accordainHeader">
+          <Typography className="secondaryHeading">
+            Po dokonaniu przelewu i zaksięgowaniu go, auto przewożone zostaje do
+            bazy kontenerowej w porcie i drogą morską importowane do Europy.
+            Auto zostaje dostarczone na wskazany przez Klienta adres odbioru.
+            Lokalizacja kontenera jest przez nas na bieżąco monitorowana, klient
+            również ma do tego dostęp.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion
+        expanded={expanded === "panel5"}
+        onChange={handleChange("panel5")}
+      >
+        <AccordionSummary
+          className="accordainHeader"
+          expandIcon={<ExpandMoreIcon className="icon" />}
+          aria-controls="panel4bh-content"
+          id="panel4bh-header"
+        >
+          <Typography className="heading">Krok 5: Odbiór samochodu</Typography>
+        </AccordionSummary>
+        <AccordionDetails className="accordainHeader">
+          <Typography className="secondaryHeading">
+            Po dokonaniu przelewu i zaksięgowaniu go, auto przewożone zostaje do
+            bazy kontenerowej w porcie i drogą morską importowane do Europy.
+            Auto zostaje dostarczone na wskazany przez Klienta adres odbioru.
+            Lokalizacja kontenera jest przez nas na bieżąco monitorowana, klient
+            również ma do tego dostęp.
           </Typography>
         </AccordionDetails>
       </Accordion>
